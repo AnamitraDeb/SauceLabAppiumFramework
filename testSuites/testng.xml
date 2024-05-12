@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<listeners>
+		<listener class-name="com.saucelabs.listeners.TestNGListener"></listener>
+	</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.saucelabs.tests.LoginTests"/>
+      <class name="com.saucelabs.tests.ProductTests"/>
+      <class name="com.saucelabs.tests.SubmitOrderE2ETests"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
