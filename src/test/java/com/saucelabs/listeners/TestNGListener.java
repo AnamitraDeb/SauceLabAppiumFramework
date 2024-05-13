@@ -45,15 +45,16 @@ public class TestNGListener implements ITestListener
 		{
 			e.printStackTrace();
 		}
-		String filePath = "";
+		String base64FilePath = "";
 		try
 		{
-			filePath = BaseTest.captureScreenshot(result.getMethod().getMethodName(), driver) ;
+			base64FilePath = BaseTest.captureScreenshot(result.getMethod().getMethodName(), driver) ;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		test.log(Status.FAIL, "TEST FAILED");
-		test.addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
+		test.addScreenCaptureFromBase64String(base64FilePath, result.getMethod().getMethodName());
+		test.fail(result.getThrowable());
 	}
 
 	@Override

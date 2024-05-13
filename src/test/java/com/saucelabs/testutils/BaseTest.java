@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.Base64;
 import java.util.Date;
 import java.util.Properties;
 import java.text.SimpleDateFormat;
@@ -102,7 +103,11 @@ public class BaseTest {
 		 File destination = new File(destPath);
 		 
 		 FileUtils.copyFile(source, destination);
-		 return destination.getAbsolutePath();
+		 
+		 byte[] fileContent = FileUtils.readFileToByteArray(source);
+		 String encodedString = Base64.getEncoder().encodeToString(fileContent);
+		 
+		 return encodedString;
 		 
 	 }
 	
