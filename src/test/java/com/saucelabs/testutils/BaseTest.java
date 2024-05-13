@@ -102,7 +102,7 @@ public class BaseTest {
 		 File destination = new File(destPath);
 		 
 		 FileUtils.copyFile(source, destination);
-		 return destPath;
+		 return destination.getAbsolutePath();
 		 
 	 }
 	
