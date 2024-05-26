@@ -22,8 +22,7 @@ public class ExtentReporter
 		 ExtentReports extent = new ExtentReports();
 		 extent.attachReporter(reporter);
 		 extent.setSystemInfo("Tester", "Anamitra Deb");
-		 extent.createTest(reportPath);
-		 
+
 		 return extent;
 	}
 }
